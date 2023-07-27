@@ -19,6 +19,25 @@ var corsOptions = {
 }
 
 const app = express();
+
+
+
+const uri = process.env.URL_DATABASE
+
+mongoose.set('strictQuery', true)
+
+
+mongoose.connect(uri)
+    .then(() => {
+        //app.listen(5000), 
+        app.listen(process.env.PORT||"5000");
+        console.log("Server running");
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+
 app.use(cors());
 app.use(bodyParser.json())
 
@@ -42,20 +61,6 @@ app.use((error, req, res, next)=>{
 })
 
 
-const uri = process.env.URL_DATABASE
-
-mongoose.set('strictQuery', true)
-
-
-mongoose.connect(uri)
-    .then(() => {
-        //app.listen(5000), 
-        app.listen(process.env.PORT||"5000");
-        console.log("Server running");
-    })
-    .catch(err => {
-        console.log(err);
-    })
 
 
 
