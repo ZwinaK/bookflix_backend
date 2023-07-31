@@ -93,6 +93,7 @@ const getFilmById = async (req, res, next) => {
 
     const fId = req.params.filmid;
 
+    let film;
     //console.log({ fId })
 
     try {
@@ -108,7 +109,7 @@ const getFilmById = async (req, res, next) => {
       return next(error)
     };
 
-    res.json({ film: musique.toObject({getters: true}) })
+    res.json({ film: film.toObject({getters: true}) })
 }
 
 const createFilm = async (req, res, next) => {
