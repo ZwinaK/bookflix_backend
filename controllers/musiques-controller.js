@@ -44,7 +44,7 @@ const getMusiqueById = async (req, res, next) => {
 
 const createMusique = async (req, res, next) => {
 
-    const {auteur, annee, titre, imageUrl, detail} = req.body;
+    const {auteur, annee, titre, imageUrl, detail, detailUrl} = req.body;
 
     const createdMusique = new Musique ({
         auteur,

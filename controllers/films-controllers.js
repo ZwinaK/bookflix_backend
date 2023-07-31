@@ -113,7 +113,7 @@ const getFilmById = async (req, res, next) => {
 
 const createFilm = async (req, res, next) => {
 
-  const {auteur, annee, titre, imageUrl, detail} = req.body;
+  const {auteur, annee, titre, imageUrl, detail, detailUrl} = req.body;
 
   const createdFilm = new Film ({
       auteur,

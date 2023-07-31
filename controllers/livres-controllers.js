@@ -111,7 +111,7 @@ const getLivreById = async (req, res, next) => {
 
 const createLivre = async (req, res, next) => {
 
-  const {auteur, annee, titre, imageUrl, detail} = req.body;
+  const {auteur, annee, titre, imageUrl, detail, detailUrl} = req.body;
 
   const createdLivre = new Livre ({
       auteur,
