@@ -120,7 +120,8 @@ const createFilm = async (req, res, next) => {
       annee,
       titre,
       imageUrl,
-      detail
+      detail,
+      detailUrl
   });
 
   //FILMS.push(createdFilm);
@@ -138,7 +139,7 @@ const createFilm = async (req, res, next) => {
 
 const updateFilm = async (req, res, next) => {
 
-  const {auteur, annee, titre, imageUrl, detail} = req.body;
+  const {auteur, annee, titre, imageUrl, detail, detailUrl} = req.body;
   const fId = req.params.filmid;
 
   let film;
@@ -155,6 +156,7 @@ film.annee = annee;
 film.titre = titre;
 film.imageUrl = imageUrl;
 film.detail = detail;
+film.detailUrl = detailUrl;
 
 try {
     await film.save();

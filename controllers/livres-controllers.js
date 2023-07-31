@@ -118,7 +118,8 @@ const createLivre = async (req, res, next) => {
       annee,
       titre,
       imageUrl,
-      detail
+      detail,
+      detailUrl
   });
 
 
@@ -136,7 +137,7 @@ const createLivre = async (req, res, next) => {
 
 const updateLivre = async (req, res, next) => {
 
-  const {auteur, annee, titre, imageUrl, detail} = req.body;
+  const {auteur, annee, titre, imageUrl, detail, detailUrl} = req.body;
   const lId = req.params.livreid;
 
   let livre;
@@ -153,6 +154,7 @@ livre.annee = annee;
 livre.titre = titre;
 livre.imageUrl = imageUrl;
 livre.detail = detail;
+livre.detailUrl = detailUrl;
 
 try {
     await livre.save();

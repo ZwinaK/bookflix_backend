@@ -7,7 +7,8 @@ const filmsSchema = new Schema({
     annee : {type: String, required:true},
     titre : {type: String, required:true},
     imageUrl : {type: String, required:true},
-    detail : {type: String, required:false}
+    detail : {type: String, required:false},
+    detailUrl : {type: String, required:false}
 
 })
 

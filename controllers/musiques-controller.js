@@ -51,7 +51,8 @@ const createMusique = async (req, res, next) => {
         annee,
         titre,
         imageUrl,
-        detail
+        detail, 
+        detailUrl
     });
 
     //MUSIQUES.push(createdMusique);
@@ -68,7 +69,7 @@ const createMusique = async (req, res, next) => {
 
 const updateMusique = async (req, res, next) => {
 
-    const {auteur, annee, titre, imageUrl, detail} = req.body;
+    const {auteur, annee, titre, imageUrl, detail, detailUrl} = req.body;
 
     const mId = req.params.musiqueid;
 
@@ -86,6 +87,7 @@ const updateMusique = async (req, res, next) => {
     musique.titre = titre;
     musique.imageUrl = imageUrl;
     musique.detail = detail;
+    musique.detailUrl = detailUrl;
 
     try {
         await musique.save();
